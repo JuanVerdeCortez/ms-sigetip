@@ -51,10 +51,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0E42BB2799D64CF48973AF1460D701F8 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_42488931649F4E63A79D647A9475B60E }}
 
+      - name: Find JAR file
+        run: ls -lh *.jar
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'bksigetip'
           slot-name: 'Production'
-          package: '*.jar'
+          package: 'mssigetip-0.0.1-SNAPSHOT.jar'
