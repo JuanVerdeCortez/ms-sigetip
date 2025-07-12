@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -33,6 +34,18 @@ public class RegistroTitulo implements Serializable {
 
     @Column(name = "ESTADO", nullable = false)
     private Integer estado;
+
+    @Column(name = "CREATED_BY")
+    private String createdBy;
+
+    @Column(name = "CREATED_AT")
+    private LocalDateTime createdAt;
+
+    @Column(name = "UPDATED_BY")
+    private String updatedBy;
+
+    @Column(name = "UPDATED_AT")
+    private LocalDateTime updatedAt;
 
     @Lob
     @Column(name = "ARCHIVO")

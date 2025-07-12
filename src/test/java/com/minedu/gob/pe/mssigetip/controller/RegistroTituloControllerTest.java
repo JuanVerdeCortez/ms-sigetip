@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ class RegistroTituloControllerTest {
     }
 
     @Test
-    void testCreateRegistroTitulo() {
+    void testCreateRegistroTitulo() throws IOException {
         RegistroTitulo registroTitulo = new RegistroTitulo();
         registroTitulo.setId(1L);
         registroTitulo.setEstado(1);

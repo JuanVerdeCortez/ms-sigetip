@@ -34,6 +34,9 @@ public class User {
     @Column(name = "actualizado_en")
     private LocalDateTime actualizadoEn;
 
+    @Column(name = "estado")
+    private Integer estado;
+
     @PrePersist
     protected void onCreate() {
         this.creadoEn = LocalDateTime.now();
